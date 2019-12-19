@@ -16,6 +16,7 @@ apt-get install -y \
     ffmpeg \
     gir1.2-gtk-3.0 \
     gir1.2-ayatanaappindicator3-0.1 \
+    git \
     jq \
     libgtk-3-dev \
     python3 \
@@ -31,7 +32,9 @@ apt-get install -y \
     python3-simplejson \
     wget && \
 echo "**** Installing gPodder ****" && \
-apt-get install -y gpodder && \
+git clone https://github.com/gpodder/gpodder.git && \
+cd gpodder && \
+python3 tools/localdepends.py && \ 
 echo "GPODDER_DOWNLOAD_DIR=/downloads" >> ~/.pam_environment && \
 apt-get clean && \
 rm -rf \
