@@ -11,7 +11,7 @@ s6-setuidgid abc
 s6-env DISPLAY=:1 HOME=/config GPODDER_DOWNLOAD_DIR=/downloads
 
 # Update gPodder
-cd gpodder
+cd /gpodder
 git pull
 
 # Execute gPodder
