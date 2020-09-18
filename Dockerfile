@@ -22,6 +22,7 @@ apt-get install -y \
     python3 \
     python3-cairo \
     python3-dbus \
+    python3-distutils \
     python3-eyed3 \
     python3-gi \
     python3-gi-cairo \
@@ -32,9 +33,9 @@ apt-get install -y \
     python3-simplejson \
     wget && \
 echo "**** Installing gPodder ****" && \
-git clone https://github.com/gpodder/gpodder.git && \
-cd gpodder && \
-python3 tools/localdepends.py && \ 
+git clone https://github.com/gpodder/gpodder.git gpodder-src && \
+cd gpodder-src && \
+PREFIX=~/.local LINGUAS=en GPODDER_INSTALL_UIS="cli gtk" make install && \ 
 echo "GPODDER_DOWNLOAD_DIR=/downloads" >> ~/.pam_environment && \
 apt-get clean && \
 rm -rf \
