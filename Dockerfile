@@ -17,6 +17,7 @@ apt-get install -y \
     gir1.2-gtk-3.0 \
     gir1.2-ayatanaappindicator3-0.1 \
     git \
+    intltool \
     jq \
     libgtk-3-dev \
     python3 \
