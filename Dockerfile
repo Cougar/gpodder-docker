@@ -36,7 +36,7 @@ apt-get install -y \
 echo "**** Installing gPodder ****" && \
 git clone https://github.com/gpodder/gpodder.git gpodder-src && \
 cd gpodder-src && \
-PREFIX=~/.local LINGUAS=en GPODDER_INSTALL_UIS="cli gtk" make install && \ 
+PREFIX=~/.local LINGUAS=en GPODDER_INSTALL_UIS="cli gtk" make install DESTDIR=/ PREFIX=/usr/local/ && \ 
 echo "GPODDER_DOWNLOAD_DIR=/downloads" >> ~/.pam_environment && \
 apt-get clean && \
 rm -rf \
